@@ -6,13 +6,13 @@ const fetch = require("node-fetch");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 const API_KEY = process.env.API_KEY;
 const TRANSLATE_URL = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
 
 app.use(
   cors({
-    origin: ["http://localhost:5500", "http://127.0.0.1:5500"],
+    origin: "*",
     credentials: true,
   })
 );
