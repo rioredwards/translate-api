@@ -1,0 +1,19 @@
+{
+  "name": "translate-api",
+  "version": "1.0.0",
+  "description": "A Proxy for the Google Translate API for students at CTD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "node-fetch": "^2.7.0"
+  }
+}
