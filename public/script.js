@@ -9,7 +9,7 @@ form.addEventListener("submit", (event) => {
   const text = textEl.value;
   const language = languageEl.value;
 
-  fetch("/", {
+  fetch("https://translate-424302.uc.r.appspot.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -73,149 +73,171 @@
       </div>
     </section>
 
-    <h2>Usage:</h2>
-    <p>
-      Because this API is supposed to translate some text that you send over. You will need to send
-      a POST request to this same URL. POST requests allow you to send your own data to the API.
-    </p>
-    <p>Please send a POST request that includes:</p>
-    <ul>
-      <li>some text to translate</li>
-      <li>the target language</li>
-    </ul>
-    <p>Your fetch should look like this:</p>
-    <pre>
-fetch(https://translate-424302.uc.r.appspot.com/, {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    text: INSERT_TEXT_HERE,
-    language: INSERT_LANGUAGE_HERE,
-  }),
-});</pre
-    >
-    <p>The text may be a string or an array of strings</p>
-    <p>The language should be one of the following codes:</p>
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Language</th>
-            <th>ISO-639 code</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Arabic</td>
-            <td><code translate="no" dir="ltr">ar</code></td>
-          </tr>
-          <tr>
-            <td>Chinese (Simplified)</td>
-            <td>
-              <code translate="no" dir="ltr">zh-CN</code>
-            </td>
-          </tr>
-          <tr>
-            <td>Chinese (Traditional)</td>
-            <td>
-              <code translate="no" dir="ltr">zh-TW</code>
-            </td>
-          </tr>
-          <tr>
-            <td>Dutch</td>
-            <td><code translate="no" dir="ltr">nl</code></td>
-          </tr>
-          <tr>
-            <td>English</td>
-            <td><code translate="no" dir="ltr">en</code></td>
-          </tr>
-          <tr>
-            <td>French</td>
-            <td><code translate="no" dir="ltr">fr</code></td>
-          </tr>
-          <tr>
-            <td>German</td>
-            <td><code translate="no" dir="ltr">de</code></td>
-          </tr>
-          <tr>
-            <td>Greek</td>
-            <td><code translate="no" dir="ltr">el</code></td>
-          </tr>
-          <tr>
-            <td>Hawaiian</td>
-            <td><code translate="no" dir="ltr">haw</code></td>
-          </tr>
-          <tr>
-            <td>Hebrew</td>
-            <td>
-              <code translate="no" dir="ltr">he</code> or <code translate="no" dir="ltr">iw</code>
-            </td>
-          </tr>
-          <tr>
-            <td>Hindi</td>
-            <td><code translate="no" dir="ltr">hi</code></td>
-          </tr>
-          <tr>
-            <td>Indonesian</td>
-            <td><code translate="no" dir="ltr">id</code></td>
-          </tr>
-          <tr>
-            <td>Irish</td>
-            <td><code translate="no" dir="ltr">ga</code></td>
-          </tr>
-          <tr>
-            <td>Italian</td>
-            <td><code translate="no" dir="ltr">it</code></td>
-          </tr>
-          <tr>
-            <td>Japanese</td>
-            <td><code translate="no" dir="ltr">ja</code></td>
-          </tr>
-          <tr>
-            <td>Korean</td>
-            <td><code translate="no" dir="ltr">ko</code></td>
-          </tr>
-          <tr>
-            <td>Polish</td>
-            <td><code translate="no" dir="ltr">pl</code></td>
-          </tr>
-          <tr>
-            <td>Portuguese (Portugal, Brazil)</td>
-            <td><code translate="no" dir="ltr">pt</code></td>
-          </tr>
-          <tr>
-            <td>Russian</td>
-            <td><code translate="no" dir="ltr">ru</code></td>
-          </tr>
-          <tr>
-            <td>Spanish</td>
-            <td><code translate="no" dir="ltr">es</code></td>
-          </tr>
-          <tr>
-            <td>Swedish</td>
-            <td><code translate="no" dir="ltr">sv</code></td>
-          </tr>
-          <tr>
-            <td>Thai</td>
-            <td><code translate="no" dir="ltr">th</code></td>
-          </tr>
-          <tr>
-            <td>Turkish</td>
-            <td><code translate="no" dir="ltr">tr</code></td>
-          </tr>
-          <tr>
-            <td>Ukrainian</td>
-            <td><code translate="no" dir="ltr">uk</code></td>
-          </tr>
-          <tr>
-            <td>Vietnamese</td>
-            <td><code translate="no" dir="ltr">vi</code></td>
-          </tr>
-        </tbody>
-      </table>
-      <p>Or View the <a href="https://cloud.google.com/translate/docs/languages">Full List</a></p>
-    </div>
+    <section id="usage">
+      <h2>Usage:</h2>
+      <div>
+        <h3>Demos</h3>
+        <ol>
+          <li>
+            <a href="https://replit.com/@rioredwards/CTDDemoTranslatingCoffee#index.js">Link</a> --
+            Translating results from the Coffee API on Replit
+          </li>
+          <li>
+            View the source code of this page! That form (above) is using this API. Just open your
+            devtools, go to the "sources" tab, then find the script.js file to see the fetch in
+            action!
+          </li>
+        </ol>
+        <aside>
+          Note: The first demo uses async/await and the second uses .then(). They are both valid
+          ways for using fetch.
+        </aside>
+      </div>
+      <h3>Documentation</h3>
+      <p>
+        Because this API is supposed to translate some text that you send over. You will need to
+        send a POST request to this same URL. POST requests allow you to send your own data to the
+        API.
+      </p>
+      <p>Please send a POST request that includes:</p>
+      <ul>
+        <li>some text to translate</li>
+        <li>the target language</li>
+      </ul>
+      <p>Your fetch should look like this:</p>
+      <pre>
+        fetch(https://translate-424302.uc.r.appspot.com/, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            text: INSERT_TEXT_HERE,
+            language: INSERT_LANGUAGE_HERE,
+          }),
+        });</pre
+      >
+      <p>The text may be a string or an array of strings</p>
+      <p>The language should be one of the following codes:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Language</th>
+              <th>ISO-639 code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Arabic</td>
+              <td><code translate="no" dir="ltr">ar</code></td>
+            </tr>
+            <tr>
+              <td>Chinese (Simplified)</td>
+              <td>
+                <code translate="no" dir="ltr">zh-CN</code>
+              </td>
+            </tr>
+            <tr>
+              <td>Chinese (Traditional)</td>
+              <td>
+                <code translate="no" dir="ltr">zh-TW</code>
+              </td>
+            </tr>
+            <tr>
+              <td>Dutch</td>
+              <td><code translate="no" dir="ltr">nl</code></td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td><code translate="no" dir="ltr">en</code></td>
+            </tr>
+            <tr>
+              <td>French</td>
+              <td><code translate="no" dir="ltr">fr</code></td>
+            </tr>
+            <tr>
+              <td>German</td>
+              <td><code translate="no" dir="ltr">de</code></td>
+            </tr>
+            <tr>
+              <td>Greek</td>
+              <td><code translate="no" dir="ltr">el</code></td>
+            </tr>
+            <tr>
+              <td>Hawaiian</td>
+              <td><code translate="no" dir="ltr">haw</code></td>
+            </tr>
+            <tr>
+              <td>Hebrew</td>
+              <td>
+                <code translate="no" dir="ltr">he</code> or <code translate="no" dir="ltr">iw</code>
+              </td>
+            </tr>
+            <tr>
+              <td>Hindi</td>
+              <td><code translate="no" dir="ltr">hi</code></td>
+            </tr>
+            <tr>
+              <td>Indonesian</td>
+              <td><code translate="no" dir="ltr">id</code></td>
+            </tr>
+            <tr>
+              <td>Irish</td>
+              <td><code translate="no" dir="ltr">ga</code></td>
+            </tr>
+            <tr>
+              <td>Italian</td>
+              <td><code translate="no" dir="ltr">it</code></td>
+            </tr>
+            <tr>
+              <td>Japanese</td>
+              <td><code translate="no" dir="ltr">ja</code></td>
+            </tr>
+            <tr>
+              <td>Korean</td>
+              <td><code translate="no" dir="ltr">ko</code></td>
+            </tr>
+            <tr>
+              <td>Polish</td>
+              <td><code translate="no" dir="ltr">pl</code></td>
+            </tr>
+            <tr>
+              <td>Portuguese (Portugal, Brazil)</td>
+              <td><code translate="no" dir="ltr">pt</code></td>
+            </tr>
+            <tr>
+              <td>Russian</td>
+              <td><code translate="no" dir="ltr">ru</code></td>
+            </tr>
+            <tr>
+              <td>Spanish</td>
+              <td><code translate="no" dir="ltr">es</code></td>
+            </tr>
+            <tr>
+              <td>Swedish</td>
+              <td><code translate="no" dir="ltr">sv</code></td>
+            </tr>
+            <tr>
+              <td>Thai</td>
+              <td><code translate="no" dir="ltr">th</code></td>
+            </tr>
+            <tr>
+              <td>Turkish</td>
+              <td><code translate="no" dir="ltr">tr</code></td>
+            </tr>
+            <tr>
+              <td>Ukrainian</td>
+              <td><code translate="no" dir="ltr">uk</code></td>
+            </tr>
+            <tr>
+              <td>Vietnamese</td>
+              <td><code translate="no" dir="ltr">vi</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Or View the <a href="https://cloud.google.com/translate/docs/languages">Full List</a></p>
+      </div>
+    </section>
   </body>
 </html>
