@@ -1,0 +1,191 @@
+/* Define color variables */
+:root {
+  --color-background: #f0f0f0; /* Light gray background */
+  --color-text: #333; /* Dark gray text */
+  --color-accent: #ff8c00; /* Mid-tone orange for accents */
+  --color-accent-hover: #fba337; /* Mid-tone orange for accents */
+  --color-code-background: #dcdcdc; /* Light gray for code blocks */
+  --color-pre-background: #e0e0e0; /* Slightly darker gray for pre blocks */
+  --color-table-border: #ccc; /* Light gray for table borders */
+  --color-table-header-background: #ff8c00; /* Mid-tone orange for table headers */
+  --color-table-header-text: white; /* White text for table headers */
+  --color-table-cell-background: #f9f9f9; /* Very light gray for table cells */
+  --color-footer-text: #ff8c00; /* Mid-tone orange for footer text */
+}
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+/* General styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  padding: 20px;
+  margin: auto;
+  max-width: 60rem;
+}
+
+h1 {
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: var(--color-accent);
+  margin: 20px 0 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#tryItOut > div {
+  display: flex;
+  gap: 4rem;
+}
+
+textarea,
+select,
+input {
+  border: 1px solid var(--color-table-border);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+select {
+  cursor: pointer;
+}
+
+form {
+  width: 30rem;
+}
+
+form > div {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  cursor: pointer;
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.result-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background-color: var(--color-table-cell-background);
+  width: 100%;
+}
+
+.result-container h3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 2rem;
+  color: var(--color-text);
+  opacity: 0.5;
+}
+
+#result {
+  font-size: 2rem;
+  color: var(--color-accent);
+}
+
+/* Code and pre styling */
+code {
+  background-color: var(--color-code-background);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--color-pre-background);
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  max-width: 30rem;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 2px 10px;
+  border: 1px solid var(--color-table-border);
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-table-header-background);
+  color: var(--color-table-header-text);
+}
+
+td {
+  background-color: var(--color-table-cell-background);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* Add some fun styles */
+body::before {
+  content: "🌍";
+  font-size: 5em;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body::after {
+  content: "Happy Translating!";
+  display: block;
+  text-align: center;
+  font-size: 1.2em;
+  color: var(--color-footer-text);
+  margin-top: 20px;
+}
